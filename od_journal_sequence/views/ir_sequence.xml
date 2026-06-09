@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="sequence_view_sar_form" model="ir.ui.view">
+        <field name="name">ir.sequence.form.sar</field>
+        <field name="model">ir.sequence</field>
+        <field name="inherit_id" ref="base.sequence_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[1]" position="after">
+                <group string="Datos Fiscales SAR">
+                    <group>
+                        <field name="sar"/>
+                        <field name="cai" invisible="not sar"/>
+                        <field name="fecha_desde" invisible="not sar"/>
+                        <field name="fecha_hasta" invisible="not sar"/>
+                    </group>
+                    <group invisible="not sar">
+                        <field name="numero_correlativo_desde"/>
+                        <field name="numero_correlativo_hasta"/>
+                        <field name="correlativo_desde"/>
+                        <field name="correlativo_hasta"/>
+                    </group>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

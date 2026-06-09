@@ -1,0 +1,15 @@
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : <https://store.webkul.com/license.html/> -->
+
+<templates id="template" xml:space="preserve">
+    <t t-name="pos_inv_print_without_down.ReceiptScreen" t-inherit="point_of_sale.ReceiptScreen" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('pos-receipt-container')]" position="before">
+            <t t-if="canPrintInvoice()">
+                <button class="button print-invoice btn btn-lg btn-info py-3" style="position: fixed; bottom: 120px; left: 30px; z-index: 99999; width: 300px; box-shadow: 0px 5px 15px rgba(0,0,0,0.3); border-radius: 10px; border: 2px solid white;" t-on-click="printInvoicePdf">
+                    <i class="fa fa-print ms-2"></i> Print Invoice
+                </button>
+            </t>
+        </xpath>
+    </t>
+</templates>
